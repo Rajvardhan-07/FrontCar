@@ -1,0 +1,118 @@
+<body class="container-fluid">
+    <div class="container" id="loginform">
+      <h2 class="login-title">Sign Up</h2>
+  
+      <form class="login-form" [formGroup]="signupForm">
+  
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="firstName">First Name </label>
+              <input formControlName="firstName"
+                     id="firstName"
+                     type="txt"
+                     placeholder="First Name"
+                     name="firstName"
+                     required
+                     />
+                     <small *ngIf="signupForm.controls['firstName'].dirty && signupForm.hasError('required','firstName')"
+                     class="text-danger">*First Name is Required</small>
+             </div>
+          </div>
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="lastName">Last Name </label>
+              <input formControlName="lastName"
+                     id="lastName"
+                     type="text"
+                     placeholder="Last Name"
+                     name="lastName"
+                     required
+                     />
+                     <small *ngIf="signupForm.controls['lastName'].dirty && signupForm.hasError('required','lastName')"
+                     class="text-danger">*Last Name is Required</small>
+             </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="email">Email </label>
+              <input formControlName="email"
+                     id="email"
+                     type="email"
+                     placeholder="Email"
+                     name="email"
+                     required
+                     />
+                     <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')"
+                     class="text-danger">*Email is Required</small>
+             </div>
+          </div>
+          <div class="col-md-6 box ">
+            <div class="col-md-12">
+              <label for="phoneNumber">Phone Number </label>
+             <input formControlName="phoneNumber"
+                    id="phoneNumber"
+                    type="number"
+                    placeholder="Phone Number"
+                    name="phoneNumber"
+                    required
+                    />
+                    <small *ngIf="signupForm.controls['phoneNumber'].dirty && signupForm.hasError('required','phoneNumber')"
+                    class="text-danger">*Phone Number is Required</small>
+            </div>
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="password">Password </label>
+              <input formControlName="password"
+              id="password"
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+              />
+              <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')"
+              class="text-danger">*Password is Required</small>
+             </div>
+          </div>
+        <!-- role div -->
+  
+  
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+  
+            <label for="role">Role </label>
+            <input formControlName="role"
+            id="role"
+            type="role"
+            placeholder="Customer/Washer"
+            name="role"
+            required
+            />
+           <small *ngIf="signupForm.controls['role'].dirty && signupForm.hasError('required','role')"
+           class="text-danger">*Password is Required</small>
+          </div>
+       </div>
+  
+  
+  
+        </div>
+  
+  
+        <button (click)="onSignUp()"
+         class="btn btn--form" type="submit" value="Log in">
+          Sign Up
+        </button>
+        <p> Already have account <a routerLink="/login">Login</a></p>
+  
+      </form>
+    </div>
+  </body>
+  
+  

@@ -1,0 +1,46 @@
+<body class="container-fluid">
+
+    <div class="container" id="loginform">
+      <h2 class="login-title">Log in</h2>
+  
+      <form class="login-form" [formGroup]="loginForm">
+  
+  
+        <div>
+          <label for="email">Email </label>
+          <input formControlName="email"
+                 id="email"
+                 type="email"
+                 placeholder="Email"
+                 name="email"
+                 required
+                 />
+        </div>
+        <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')"
+         class="text-danger">*Email is Required</small>
+        <div>
+          <label for="password">Password </label>
+          <input formControlName="password"
+                 id="password"
+                 type="password"
+                 placeholder="Password"
+                 name="password"
+                 required
+                 />
+        </div>
+        <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+        class="text-danger">*Password is Required</small>
+  
+  <!-- role div -->
+  
+        <button (click)="onLogin()"
+         class="btn btn--form" type="submit" value="Log in" id="loginButton">
+          Log in
+        </button>
+        <p>Don't have account ? <a routerLink="/signup">Sign Up</a></p>
+      </form>
+    </div>
+  
+  </body>
+  
+  

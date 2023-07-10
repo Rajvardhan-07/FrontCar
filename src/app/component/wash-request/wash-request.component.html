@@ -1,0 +1,32 @@
+
+<div>
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Payment Status</th>
+          <th scope="col">Total Cost</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order">
+          <th scope="row">{{item.id}}</th>
+          <th scope="row">{{item.customerName}}</th>
+          <th scope="row">{{item.phoneNumber}}</th>
+          <th scope="row">{{item.paymentStatus}}</th>
+          <th scope="row">{{item.totalCost}}</th>
+  
+  
+         <td>
+            <button type="button" class="btn btn-secondary mb-2" (click)="populate(item)" routerLink="orderDetails" >View Details</button>
+          <button type="button" class="btn btn-secondary mb-2" (click)="updateData(item.id)" >Approve</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+   </div>
+  

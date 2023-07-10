@@ -1,0 +1,64 @@
+
+<div class="container">
+    <h1>Order Preview</h1>
+
+    <div class="order-card">
+      <h3>Car Details</h3>
+      <p><strong>Car Name:</strong> {{orderobj.car.name}}</p>
+      <p><strong>Car Model:</strong> {{orderobj.car.model}}</p>
+      <p><strong>Car Number:</strong>{{orderobj.car.carNumber}}</p>
+      <!-- <p><strong>:</strong>{{convertdate()}}</p> -->
+    </div>
+
+    <div class="order-card">
+      <h3>Washing Address</h3>
+      <p><strong>Name:</strong>{{orderobj.customerName}}</p>
+      <p><strong>Address:</strong>{{orderobj.address.custAddress}}</p>
+      <p><strong>City:</strong>{{orderobj.address.city}}</p>
+      <p><strong>Zip:</strong>{{orderobj.address.pincode}}</p>
+      <p><strong>Washing Schedule At:</strong>{{this.orderser.orderformobj.isScheduledLater|date :'yyyy-MM-dd hh:mm:ss'}}</p>
+
+    </div>
+
+    <div class="order-card">
+      <h3>Package Details</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{package.name}}</td>
+            <td>{{package.description}}</td>
+            <td>${{package.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="order-card">
+      <h3>Total</h3>
+      <p><strong>Subtotal:</strong> ${{package.price}}</p>
+      <p><strong>Tax:</strong> ${{package.price*0.10}}</p>
+      <p><strong>Total:</strong> ${{orderobj.totalCost+package.price*0.10}}</p>
+    </div>
+  </div>
+  <div class="order-buttons">
+
+    <button type="submit"  (click)="populateform(orderobj)" routerLink=".." id="bookbutton1"
+    class="btn btn-black btn-lg  box " >
+    Edit
+    </button>
+    <button type="submit"  routerLink="invoice"  (click)="addData(orderobj)"  id="bookbutton3"
+    class="btn btn-black btn-lg  box " >
+    Procced Without Payment
+    </button>
+    <!-- <button type="submit"  routerLink="payment" (click)="addData(orderobj)" id="bookbutton2"
+    class="btn btn-success btn-lg  box " >
+    Procced For Payment
+    </button> -->
+  </div>

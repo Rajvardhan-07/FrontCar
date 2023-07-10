@@ -1,0 +1,31 @@
+<div>
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">UserId</th>
+          <th scope="col">User Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Role</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users">
+          <th scope="row">{{item.userId}}</th>
+          <th scope="row">{{item.email}}</th>
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.role}}</td>
+          <td>{{item.status}}</td>
+  
+         <td>
+          <button type="button" class="btn btn-secondary"  (click)="deletingUser(item.userId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+   </div>
+  

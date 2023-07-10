@@ -1,0 +1,46 @@
+<body class="container-fluid">
+
+    <div class="container" id="loginform">
+      <h2 class="login-title">Add Product</h2>
+  
+      <form class="login-form" [formGroup]="packageForm" >
+        <div>
+          <label for="name">Name </label>
+          <input formControlName="name"
+                 id="name"
+                 type="name"
+                 placeholder="Name"
+                 name="name"
+                 required
+                 />
+        </div>
+        <div>
+          <label for="price">Price </label>
+          <input formControlName="price"
+                 id="price"
+                 type="number"
+                 placeholder="Price"
+                 name="price"
+                 required
+                 />
+        </div>
+        <div>
+          <label for="description">Description </label>
+          <input formControlName="description"
+                 id="description"
+                 type="text"
+                 placeholder="Description"
+                 name="description"
+                 required
+                 />
+        </div>
+        <button
+         class="btn btn--form" type="submit" value="Log in" id="loginButton"  (click)="onSave()">
+          Save
+        </button>
+    </form>
+    </div>
+  
+  </body>
+  
+  

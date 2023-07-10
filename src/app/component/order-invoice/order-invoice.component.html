@@ -1,0 +1,61 @@
+
+<div class="container">
+    <h1>Invoice</h1>
+  
+    <div class="order-card">
+      <h3>Order Details</h3>
+      <p><strong>Order ID:</strong> #{{this.order.id}}</p>
+      <p><strong>Date:</strong> {{this.order.date_Time| date :'yyyy-MM-dd'}}</p>
+      <p><strong>Payment Status:</strong>{{this.order.paymentStatus}}</p>
+    </div>
+    <div class="order-card">
+      <h3>Car Details</h3>
+      <p><strong>Car Name:</strong> {{this.car.name}}</p>
+      <p><strong>Car Model:</strong> {{this.car.model}}</p>
+      <p><strong>Car Number:</strong>{{this.car.carNumber}}</p>
+    </div>
+  
+    <div class="order-card">
+      <h3>Washing Address</h3>
+      <p><strong>Name:</strong>{{this.order.customerName}}</p>
+      <p><strong>Address:</strong>{{this.address.custAddress}}</p>
+      <p><strong>City:</strong>{{this.address.city}}</p>
+      <p><strong>Pin Code:</strong>{{this.address.pincode}}</p>
+      <p><strong>Phone Number:</strong>{{this.order.phoneNumber}}</p>
+      <p><strong>Washing Schedule At:</strong>{{this.order.isScheduledLater|date :'yyyy-MM-dd hh:mm:ss'}}</p>
+    </div>
+  
+    <div class="order-card">
+      <h3>Package Details</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{this.package.name}}</td>
+            <td>{{this.package.description}}</td>
+            <td>${{this.package.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="order-card">
+      <h3>Total</h3>
+      <p><strong>Subtotal:</strong> ${{this.package.price}}</p>
+      <p><strong>Tax:</strong> ${{this.package.price*.10}}</p>
+      <p><strong>Total:</strong> ${{this.order.totalCost}}</p>
+    </div>
+  </div>
+  <div class="order-buttons">
+    <button type="submit"  routerLink="" id="bookbutton2"
+    class="btn btn-success btn-lg  box " >
+    Back to home
+    </button>
+  </div>
+  

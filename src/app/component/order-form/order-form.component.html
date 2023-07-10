@@ -1,0 +1,198 @@
+<body class="container-fluid">
+    <div class="container" id="loginform">
+      <h2 class="login-title">Book Car Wash</h2>
+  
+      <form class="login-form" #myForm="ngForm">
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="customerName">Customer Name</label>
+              <input
+                     id="customerName"
+                     type="text"
+                     placeholder="Customer Name"
+                     name="customerName"
+                     required
+                     #customerName="ngModel"
+                 [(ngModel)]="orderser.orderformobj.customerName"
+                     />
+  
+             </div>
+          </div>
+          <div class="col-md-6 box ">
+            <div class="col-md-12">
+             <label for="carName">Car Name</label>
+             <input
+                    id="carName"
+                    type="text"
+                    placeholder="Car Name"
+                    name="carName"
+                    required
+                    #carName="ngModel"
+                [(ngModel)]="orderser.orderformobj.car.name"
+                    />
+  
+            </div>
+         </div>
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="carModel">Car Model </label>
+              <input
+                     id="carModel"
+                     type="text"
+                     placeholder="Car Model"
+                     name="carModel"
+                     required
+                     #carModel="ngModel"
+                 [(ngModel)]="orderser.orderformobj.car.model"
+                     />
+  
+             </div>
+          </div>
+          <div class="col-md-6 box">
+            <div class="col-md-12">
+             <label for="carNumber">Car Number </label>
+             <input
+                    id="carNumber"
+                    type="text"
+                    placeholder="Car Number"
+                    name="carNumber"
+                    required
+                    #carNumber="ngModel"
+                [(ngModel)]="orderser.orderformobj.car.carNumber"
+                    />
+  
+            </div>
+         </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="address">Address </label>
+              <input
+                     id="address"
+                     type="text"
+                     placeholder="Address"
+                     name="address"
+                     required
+                     #address="ngModel"
+                 [(ngModel)]="orderser.orderformobj.address.custAddress"
+                     />
+  
+             </div>
+          </div>
+          <div class="col-md-6 box ">
+            <div class="col-md-12">
+              <label for="city">City</label>
+             <input
+                    id="city"
+                    type="city"
+                    placeholder="City"
+                    name="city"
+                    required
+                    #city="ngModel"
+                 [(ngModel)]="orderser.orderformobj.address.city"
+                    />
+  
+            </div>
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="state">State</label>
+              <input
+              id="state"
+              type="state"
+              placeholder="State"
+              name="state"
+              required
+              #state="ngModel"
+                 [(ngModel)]="orderser.orderformobj.address.state"
+              />
+  
+             </div>
+          </div>
+      <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="pincode">Pincode</label>
+            <input
+            id="pincode"
+            type="text"
+            placeholder="Pincode"
+            name="pincode"
+            required
+            #pincode="ngModel"
+              [(ngModel)]="orderser.orderformobj.address.pincode"
+            />
+          </div>
+       </div>
+        </div>
+  
+  
+        <div class="row">
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="phoneNumber">Phone Number</label>
+              <input
+              id="phoneNumber"
+              type="number"
+              placeholder="Phone Number"
+              name="phoneNumber"
+              required
+              #phoneNumber="ngModel"
+                 [(ngModel)]="orderser.orderformobj.phoneNumber"
+              />
+  
+             </div>
+          </div>
+      <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="date_time">Date</label>
+            <input
+            id="date_time"
+            type="datetime-local"
+            placeholder="date_time"
+            name="date_time"
+            required
+            #date_time="ngModel"
+              [(ngModel)]="orderser.orderformobj.isScheduledLater"
+            />
+          </div>
+       </div>
+        </div>
+  
+  
+  
+  
+          <div class="col-md-12">
+            <label for="instructions">Instructions</label>
+            <input
+            id="instructions"
+            type="text"
+            placeholder="Instructions"
+            name="instructions"
+            required
+            #pincode="ngModel"
+              [(ngModel)]="orderser.orderformobj.instructions"
+            />
+          </div>
+  
+        <button
+         class="btn btn--form" type="submit" value="Save" (click)="onSave(myForm)">
+          Save Details
+        </button>
+  
+  
+      </form>
+    </div>
+  </body>
+  
+  

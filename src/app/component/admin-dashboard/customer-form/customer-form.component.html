@@ -1,0 +1,98 @@
+<body class="container-fluid">
+    <div class="container" id="loginform">
+      <h2 class="login-title">Sign Up</h2>
+  
+      <form class="login-form" [formGroup]="editForm">
+  
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="firstName">First Name </label>
+              <input formControlName="firstName"
+                     id="firstName"
+                     type="txt"
+                     placeholder="First Name"
+                     name="firstName"
+                     required
+                     />
+                     <small *ngIf="editForm.controls['firstName'].dirty && editForm.hasError('required','firstName')"
+                     class="text-danger">*First Name is Required</small>
+             </div>
+          </div>
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="lastName">Last Name </label>
+              <input formControlName="lastName"
+                     id="lastName"
+                     type="text"
+                     placeholder="Last Name"
+                     name="lastName"
+                     required
+                     />
+                     <small *ngIf="editForm.controls['lastName'].dirty && editForm.hasError('required','lastName')"
+                     class="text-danger">*Last Name is Required</small>
+             </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 box ">
+             <div class="col-md-12">
+              <label for="email">Email </label>
+              <input formControlName="email"
+                     id="email"
+                     type="email"
+                     placeholder="Email"
+                     name="email"
+                     required
+                     />
+                     <small *ngIf="editForm.controls['email'].dirty && editForm.hasError('required','email')"
+                     class="text-danger">*Email is Required</small>
+             </div>
+          </div>
+          <div class="col-md-6 box ">
+            <div class="col-md-12">
+              <label for="phoneNumber">Phone Number </label>
+             <input formControlName="phoneNumber"
+                    id="phoneNumber"
+                    type="number"
+                    placeholder="Phone Number"
+                    name="phoneNumber"
+                    required
+                    />
+                    <small *ngIf="editForm.controls['phoneNumber'].dirty && editForm.hasError('required','phoneNumber')"
+                    class="text-danger">*Phone Number is Required</small>
+            </div>
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 box">
+             <div class="col-md-12">
+              <label for="password">Password </label>
+              <input formControlName="password"
+              id="password"
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+              />
+              <small *ngIf="editForm.controls['password'].dirty && editForm.hasError('required','password')"
+              class="text-danger">*Password is Required</small>
+             </div>
+          </div>
+        <!-- role div -->
+        </div>
+  
+  
+        <button
+         class="btn btn--form" type="submit" value="Log in" routerLink="admin" (click)="populateData()">
+          Save Changes
+        </button>
+        
+  
+      </form>
+    </div>
+  </body>
+  
+  
