@@ -1,1 +1,33 @@
-<p>testing works!</p>
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card text-center mb-5">
+      <div class="circle-image">
+        <img src="\assets\userIcon.png" width="50">
+      </div>
+      <span class="dot"></span>
+      <span class="name mb-1 fw-500">{{user.firstName}}</span>
+      <small class="text-black-50">{{user.lastName}}</small>
+      <small class="text-black-50 font-weight-bold">#{{user.id}}</small>
+      <div class="location mt-4">
+        <span class="d-block"><i class="fa fa-map-marker start"></i> <small class="text-truncate ml-2">{{user.phoneNumber}}</small></span>
+      </div>
+      <div class="rate bg-success py-3 text-white mt-3">
+        <h6 class="mb-0">Rate your Washer</h6>
+        <div class="rating">
+          <input type="radio" name="rating" value="5" id="5" #washerRating>
+          <label for="5">☆</label>
+          <input type="radio" name="rating" value="4" id="4" #washerRating>
+          <label for="4">☆</label>
+          <input type="radio" name="rating" value="3" id="3" #washerRating>
+          <label for="3">☆</label>
+          <input type="radio" name="rating" value="2" id="2" #washerRating>
+          <label for="2">☆</label>
+          <input type="radio" name="rating" value="1" id="1" #washerRating>
+          <label for="1">☆</label>
+        </div>
+        <div class="buttons px-4 mt-0">
+          <button class="btn btn-warning btn-block rating-submit" (click)="rateWasher()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

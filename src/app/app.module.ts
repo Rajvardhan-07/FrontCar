@@ -36,6 +36,7 @@ import { TestingComponent } from './component/testing/testing.component';
 import { WashRequestComponent } from './component/wash-request/wash-request.component';
 import { WasherDashboardComponent } from './component/washer-dashboard/washer-dashboard.component';
 import { WasherDetailsComponent } from './component/washer-details/washer-details.component';
+import { TokenInterceptor } from './interceptor/token.service';
 
 
 @NgModule({
@@ -78,7 +79,9 @@ import { WasherDetailsComponent } from './component/washer-details/washer-detail
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
