@@ -69,7 +69,7 @@ import { TokenInterceptor } from './interceptor/token.service';
     TestingComponent,
     WashRequestComponent,
     WasherDashboardComponent,
-    WasherDetailsComponent
+    WasherDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +77,8 @@ import { TokenInterceptor } from './interceptor/token.service';
     HttpClientModule,
     NgToastModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    GooglePayButtonModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptor,

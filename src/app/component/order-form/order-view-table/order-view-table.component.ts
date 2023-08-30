@@ -22,57 +22,55 @@ import { ProductServiceService } from 'src/services/product-service.service';
 })
 export class OrderViewTableComponent {
 
-  paymetRequest:google.payments.api.PaymentDataRequest={
-    apiVersion:2,
-    apiVersionMinor:0,
-    allowedPaymentMethods:[
+  paymentRequest:google.payments.api.PaymentDataRequest = {
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods : [
       {
         type:'CARD',
-        parameters:{
-          allowedAuthMethods:['PAN_ONLY','CRYPTOGRAM_3DS'],
-          allowedCardNetworks:['AMEX','MASTERCARD','VISA','MAESTRO']
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
         },
-    tokenizationSpecification:{
-      type:'PAYMENT_GATEWAY',
-      parameters:{
-        gateway:'example',
-        gatewayMerchandId:'exampleGatewayMerchantId'
-      }
-    }
+        tokenizationSpecification:{
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchentId: 'exampleGatewayMerchantId'
+          }
+        }
       }
     ],
-    merchantInfo:{
-      merchantId:'12344578901234567890',
-      merchantName:'Demo Merchant'
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant'
     },
-    transactionInfo:{
+    transactionInfo: {
       totalPriceStatus:'FINAL',
-      totalPriceLabel:'Total',
-      totalPrice:'0.10',
-      currencyCode:'EUR',
-      countryCode:'BR'
+      totalPriceLabel: 'Total',
+      totalPrice: '2000',
+      currencyCode: 'INR',
+      countryCode: 'IN'
     },
     callbackIntents:['PAYMENT_AUTHORIZATION']
   };
 
-  onLoadPaymentData=(
-    event:Event
-  ):void=>{
-    const eventDetails=event as CustomEvent<google.payments.api.PaymentData>;
-    console.log('load payemt data',eventDetails.detail)
+  onLoadPaymentData = (
+    event: Event
+  ): void => { 
+    const eventDetail = event as CustomEvent<google.payments.api.PaymentData>
+    console.log('load payment data', eventDetail.detail);
   }
-
-  onPaymentDataAuthorized:google.payments.api.PaymentAuthorizedHandler=(
+  onPaymentDataAuthorized : google.payments.api.PaymentAuthorizedHandler = (
     paymentData
-  )=>{
-    console.log("payment authorized",paymentData)
+  ) => {
+    console.log('payment authorised', paymentData);
     return{
-      transactionState:'SUCCESS'
+      transactionState: 'SUCCESS'
     };
   }
-
-  onError=(event:ErrorEvent):void=>{
-    console.error('error',event.error)
+  onError = (event:ErrorEvent): void => {
+    console.error('error', event.error);
   }
 
 

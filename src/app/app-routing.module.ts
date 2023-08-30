@@ -37,32 +37,32 @@ import { AuthGuard } from './Authguard/auth-guard.service';
 
 const routes: Routes = [
 
-  {path:'admin', component:AdminDashboardComponent},
-  {path:'admin/form', component:CustomerFormComponent},
-  {path:'admin/orderDetails', component:AfterWashOrderComponent},
-  {path:'admin/orders/orderDetails', component:AfterWashOrderComponent},
-  {path:'admin/orders', component:InvoiceComponent},
-  {path:'admin/services', component:AllPackagesComponent},
-  {path:'admin/services/form', component:FormForPackageComponent},
-  {path:'admin/services/update', component:UpdatePackageComponent},
-  {path:'admin/allUsers', component:AllUsersComponent},
-  {path:'admin/cars', component:CarsComponent},
-  {path:'admin/washersList', component:WasherDetailsComponent},
+  {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
+  {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
+  {path:'admin/orderDetails', component:AfterWashOrderComponent,canActivate:[AuthGuard]},
+  {path:'admin/orders/orderDetails', component:AfterWashOrderComponent,canActivate:[AuthGuard]},
+  {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
+  {path:'admin/services', component:AllPackagesComponent,canActivate:[AuthGuard]},
+  {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
+  {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
+  {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
+  {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
+  {path:'admin/washersList', component:WasherDetailsComponent,canActivate:[AuthGuard]},
 
 
 
-  {path:'customer', component:CustomerDashboardComponent},
-  {path:'customer/scheduled/orderDetails', component:AfterWashOrderComponent},
-  {path:'customer/orderDetails', component:AfterWashOrderComponent},
-  {path:'customer/scheduled', component:ScheduledWashCustomerComponent},
+  {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled/orderDetails', component:AfterWashOrderComponent,canActivate:[AuthGuard]},
+  {path:'customer/orderDetails', component:AfterWashOrderComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled', component:ScheduledWashCustomerComponent,canActivate:[AuthGuard]},
 
 
-  {path:'washer', component:WasherDashboardComponent},
-  {path:'washer/orderDetails', component:AfterWashOrderComponent},
-  {path:'washer/request', component:WashRequestComponent},
-  {path:'washer/request/orderDetails', component:OrderDetailsComponent},
-  {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent},
-  {path:'washer/scheduled', component:ScheduledWashComponent},
+  {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
+  {path:'washer/orderDetails', component:AfterWashOrderComponent,canActivate:[AuthGuard]},
+  {path:'washer/request', component:WashRequestComponent,canActivate:[AuthGuard]},
+  {path:'washer/request/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'washer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
 
 
   {path:'home',component:HomepageComponent},
@@ -73,10 +73,10 @@ const routes: Routes = [
   {path:'testing', component:TestingComponent},
 
 
-  {path:'home/selectpackage', component:SelectPackageComponent},
-  {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent},
-  {path:'home/selectpackage/form', component:OrderFormComponent},
-  {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent},
+  {path:'home/selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
+  {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
+  {path:'home/selectpackage/form', component:OrderFormComponent,canActivate:[AuthGuard]},
+  {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
 
 
   {path:'',component:HomepageComponent}

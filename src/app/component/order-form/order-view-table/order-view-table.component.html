@@ -57,6 +57,16 @@
     class="btn btn-black btn-lg  box " >
     Procced Without Payment
     </button>
+    <google-pay-button 
+    environment="TEST"
+    buttontype="buy"
+    buttoncolor="black"
+    [paymentRequest]="paymentRequest"
+    (loadpaymentdata)="onLoadPaymentData($event)"
+    (error)="onError($event)"
+    [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+    >  
+  </google-pay-button>
     <!-- <button type="submit"  routerLink="payment" (click)="addData(orderobj)" id="bookbutton2"
     class="btn btn-success btn-lg  box " >
     Procced For Payment

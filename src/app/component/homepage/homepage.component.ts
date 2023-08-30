@@ -23,6 +23,7 @@ export class HomepageComponent implements OnInit{
     isLoggedIn(){
       if(this.auth.isLoggedIn())
       return true;
+      else
       return false;
     }
 }
